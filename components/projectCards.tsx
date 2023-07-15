@@ -199,47 +199,55 @@ const CarouselLight = () => {
     'start' | 'end' | 'center'
   >('start')
   return (
-    <div className="aspect-video w-full sm:w-3/5">
-      {inactive && (
-        <div className="absolute inset-0 z-10 flex animate-pulse items-center justify-center border-2 border-red-700 opacity-0 transition-opacity delay-500 duration-300">
-          <div className="flex items-center justify-center">
-            <AlertOctagon size={200} className={`flex text-red-800`} />
-            <p className={`text-lg font-bold text-red-800 `}>
-              Deployment offline :/
-            </p>
+    <div
+      id="projects"
+      className=" flex w-full flex-grow flex-wrap items-center justify-center border-t-2 border-gray-800 py-36 dark:border-gray-400"
+    >
+      <div className="mb-10 w-full items-center justify-center text-center text-3xl font-bold">
+        <h1 className="dark:text-white">WEB PROJECTS</h1>
+      </div>
+      <div className="aspect-video w-full sm:w-3/5">
+        {inactive && (
+          <div className="absolute inset-0 z-10 flex animate-pulse items-center justify-center border-2 border-red-700 opacity-0 transition-opacity delay-500 duration-300">
+            <div className="flex items-center justify-center">
+              <AlertOctagon size={200} className={`flex text-red-800`} />
+              <p className={`text-lg font-bold text-red-800 `}>
+                Deployment offline :/
+              </p>
+            </div>
           </div>
-        </div>
-      )}
-      <Lightbox
-        open={open}
-        captions={{ showToggle, descriptionTextAlign, descriptionMaxLines }}
-        slideshow={{ autoplay: true, delay: 4000 }}
-        plugins={[Inline, Captions, Slideshow]}
-        carousel={{ preload: 3 }}
-        on={{
-          click: (elemnt) => {
-            if (!allProjects[elemnt.index].active) {
-              return
-            } else {
-              window.open(allProjects[elemnt.index].site, '_blank')
+        )}
+        <Lightbox
+          open={open}
+          captions={{ showToggle, descriptionTextAlign, descriptionMaxLines }}
+          slideshow={{ autoplay: true, delay: 4000 }}
+          plugins={[Inline, Captions, Slideshow]}
+          carousel={{ preload: 3 }}
+          on={{
+            click: (elemnt) => {
+              if (!allProjects[elemnt.index].active) {
+                return
+              } else {
+                window.open(allProjects[elemnt.index].site, '_blank')
+              }
+            },
+            view: () => {
+              setInactive(false)
+              console.log('view')
+            },
+          }}
+          close={() => setOpen(false)}
+          slides={allProjects.map((project) => {
+            return {
+              ...project,
+              src: project.src,
+              title: project.name,
+              description: project.description,
             }
-          },
-          view: () => {
-            setInactive(false)
-            console.log('view')
-          },
-        }}
-        close={() => setOpen(false)}
-        slides={allProjects.map((project) => {
-          return {
-            ...project,
-            src: project.src,
-            title: project.name,
-            description: project.description,
-          }
-        })}
-        // render={{ slide: NextJsImage }}
-      />
+          })}
+          // render={{ slide: NextJsImage }}
+        />
+      </div>
     </div>
   )
 }

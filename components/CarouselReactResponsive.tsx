@@ -221,50 +221,61 @@ const MyCarousel = ({ projectType = 'main' }) => {
   }
 
   return (
-    <div className="w-1/2 sm:w-1/3 lg:w-1/6">
-      <Carousel
-        autoPlay
-        infiniteLoop
-        onClickItem={handleClick}
-        showThumbs={false}
-        onChange={() => setInactive(false)}
-        preventMovementUntilSwipeScrollTolerance={true}
-        swipeScrollTolerance={50}
-        className="carousel-container"
-      >
-        {projects.map((project, index) => {
-          let inactiveLabelColor = project.darkimage
-            ? 'text-red-800'
-            : 'text-black'
-          return (
-            <div className="items-center justify-center" key={`index${index}`}>
-              <Image
-                src={project.src}
-                alt={`Image ${index}`}
-                width={100}
-                height={50}
-                priority={true}
-              />
-              {inactive && (
-                <div className="absolute inset-0 flex animate-pulse items-center justify-center opacity-0 transition-opacity delay-500 duration-300">
-                  <div className="flex items-center justify-center">
-                    <AlertOctagon
-                      size={200}
-                      className={`flex ${inactiveLabelColor}`}
-                    />
-                    <p className={`${inactiveLabelColor} text-lg font-bold `}>
-                      Deployment offline :/
-                    </p>
+    <div
+      id="projects"
+      className="flex w-full flex-grow flex-wrap items-center justify-center border-t-2 border-gray-800 py-36 dark:border-gray-400"
+    >
+      <div className="mb-10 w-full items-center justify-center text-center text-3xl font-bold">
+        <h1 className="dark:text-white">MOBILE PROJECTS</h1>
+      </div>
+      <div className="w-1/2 sm:w-1/3 lg:w-1/6">
+        <Carousel
+          autoPlay
+          infiniteLoop
+          onClickItem={handleClick}
+          showThumbs={false}
+          onChange={() => setInactive(false)}
+          preventMovementUntilSwipeScrollTolerance={true}
+          swipeScrollTolerance={50}
+          className="carousel-container"
+        >
+          {projects.map((project, index) => {
+            let inactiveLabelColor = project.darkimage
+              ? 'text-red-800'
+              : 'text-black'
+            return (
+              <div
+                className="items-center justify-center"
+                key={`index${index}`}
+              >
+                <Image
+                  src={project.src}
+                  alt={`Image ${index}`}
+                  width={100}
+                  height={50}
+                  priority={true}
+                />
+                {inactive && (
+                  <div className="absolute inset-0 flex animate-pulse items-center justify-center opacity-0 transition-opacity delay-500 duration-300">
+                    <div className="flex items-center justify-center">
+                      <AlertOctagon
+                        size={200}
+                        className={`flex ${inactiveLabelColor}`}
+                      />
+                      <p className={`${inactiveLabelColor} text-lg font-bold `}>
+                        Deployment offline :/
+                      </p>
+                    </div>
                   </div>
-                </div>
-              )}
-              <p className="legend absolute w-full overflow-hidden text-ellipsis text-center">
-                {project.description} using {project.tecDescription}
-              </p>
-            </div>
-          )
-        })}
-      </Carousel>
+                )}
+                <p className="legend absolute w-full overflow-hidden text-ellipsis text-center">
+                  {project.description} using {project.tecDescription}
+                </p>
+              </div>
+            )
+          })}
+        </Carousel>
+      </div>
     </div>
   )
 }

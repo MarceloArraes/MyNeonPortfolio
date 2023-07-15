@@ -1,30 +1,27 @@
 function Title() {
   return (
-    <main id="home" className="py-30">
+    <main id="home" className="py-30 dark:text-white">
       <div className="flex w-full flex-col items-center justify-center text-center">
         <h1 className="text-6xl font-bold">
           Welcome to{' '}
           <a
             className="text-blue-600"
-            href="https://www.linkedin.com/in/marcelo-arraes"
+            href="https://www.linkedin.com/in/MarArraes"
           >
             Marcelo's Portfolio
           </a>
         </h1>
         <p className="mt-3 text-2xl">
           Feel free to contact me at{' '}
-          <code className="rounded-md bg-gray-200 p-3 font-mono text-lg dark:bg-gray-700">
+          <code className="rounded-md bg-gray-400  p-3 font-mono text-lg dark:bg-gray-700">
             marcelo.arraes@gmail.com
           </code>
         </p>
 
         <div className="z-10 m-10 flex-row space-x-4">
-          <p className="mt-3 mb-5 text-2xl">download my resume here:</p>
-          <div className="flex space-x-5 justify-center">
-            <a
-              href="Resume Marcelo.pdf"
-              download="Curriculum_Marcelo_Arraes"
-            >
+          <p className="mb-5 mt-3 text-2xl">download my resume here:</p>
+          <div className="flex justify-center space-x-5">
+            <a href="Resume Marcelo.pdf" download="Curriculum_Marcelo_Arraes">
               <button
                 className="
               flex
@@ -33,15 +30,18 @@ function Title() {
               rounded-full
               border-2
               border-gray-500
+              bg-slate-300
               px-3
               py-2
               transition
               duration-200
               ease-in
-              hover:bg-gray-700
-              hover:text-white
+              hover:bg-gray-200
+              hover:text-red-700
               hover:shadow-lg
               focus:outline-none
+              dark:bg-slate-500
+            dark:hover:bg-slate-300
               sm:px-6"
               >
                 <svg
@@ -49,7 +49,7 @@ function Title() {
                   focusable="false"
                   data-prefix="fas"
                   data-icon="download"
-                  className="mt-1 mr-2 w-5 "
+                  className="mr-2 mt-1 w-5 "
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
@@ -65,23 +65,27 @@ function Title() {
             </a>
           </div>
         </div>
-        <p className="text-start max-w-lg p-10 font-serif text-xl font-normal sm:w-3/4">
-          Hi, I'm Marcelo, a passionate web developer based in Australia.
-          I specialize in utilizing technologies such as React-Native,
-          ReactJS, NextJS, TypeScript, TailwindCSS, and Node.js to create
-          engaging and dynamic web applications.<br/>
+        <p className="max-w-lg p-10 text-start font-serif text-xl font-normal  sm:w-3/4">
+          Hi, I'm Marcelo, a passionate web developer based in Australia. I
+          specialize in utilizing technologies such as React-Native, ReactJS,
+          NextJS, TypeScript, TailwindCSS, and Node.js to create engaging and
+          dynamic web applications.
+          <br />
           My journey as a web developer has taught me the value of clean and
           efficient code, and I take pride in writing maintainable and scalable
-          solutions.<br/>
+          solutions.
+          <br />
           Throughout my career, I have collaborated with diverse teams, working
           in Agile/Scrum environments, and utilizing collaboration tools like
           GitHub, Bitbucket, Jira, Monday, and Slack. This experience has honed
-          my ability to communicate effectively and work harmoniously.<br/>
+          my ability to communicate effectively and work harmoniously.
+          <br />
           I am driven by a genuine passion for technology and a dedication to
           continuous learning. I am excited about the prospect of contributing
-          my skills and expertise to new projects. If you have
-          an exciting opportunity or a project in mind, I would love to connect
-          and explore how we can work together to bring your ideas to life.<br/>
+          my skills and expertise to new projects. If you have an exciting
+          opportunity or a project in mind, I would love to connect and explore
+          how we can work together to bring your ideas to life.
+          <br />
           Thank you for visiting my portfolio website. Feel free to browse
           through my projects and reach out to me for any inquiries or
           collaborations. Let's create amazing web experiences together!

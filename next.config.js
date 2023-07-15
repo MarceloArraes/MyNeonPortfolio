@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-  reactStrictMode: true,
-}
+const withFonts = require('next-fonts')
+const withTM = require('next-transpile-modules')([
+  '@react95/core',
+  '@react95/icons',
+])
+
+module.exports = withTM(
+  withFonts({
+    webpack(config) {
+      return config
+    },
+  })
+)
