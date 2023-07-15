@@ -108,7 +108,7 @@ const allProjects = [
     name: 'Web Widget',
     description: 'A web widget for the web',
     site: 'https://vercel.com/marceloarraes/web-widget',
-    src: '/webwidget_gif2.gif',
+    src: '/webwidget_gif.gif',
     darkimage: true,
     siteIcon: '/webwidgetIcon.png',
 
