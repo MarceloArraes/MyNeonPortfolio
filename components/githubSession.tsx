@@ -1,4 +1,5 @@
 import { SetStateAction, useEffect, useState } from 'react'
+import { GITHUB_PROFILE } from '../constants/socialNetworks'
 interface GitHubEvent {
   id: string
   type: string
@@ -38,6 +39,7 @@ const fetchFromGit = async (setCommitedToday: {
         setCommitedToday(true)
       }
     })
+    .catch((err) => console.log('error fetching github ', err))
 }
 
 function GitHubSession() {
@@ -58,7 +60,7 @@ function GitHubSession() {
         </div>
         <a
           className="z-40 w-72 overflow-hidden rounded bg-white shadow-xl drop-shadow-xl duration-300 ease-in-out hover:scale-105 dark:bg-gray-800 dark:text-white  "
-          href="https://github.com/MarceloArraes"
+          href={GITHUB_PROFILE}
           target="_blank"
         >
           <img
@@ -126,7 +128,7 @@ function GitHubSession() {
         </a>
       </div>
       <a
-        href="https://github.com/MarceloArraes"
+        href={GITHUB_PROFILE}
         className="z-40 cursor-pointer rounded bg-gray-800 p-4 "
       >
         <img

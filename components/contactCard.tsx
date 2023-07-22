@@ -1,4 +1,8 @@
 import { useEffect, useState } from 'react'
+import {
+  INSTAGRAM_PROFILE,
+  LINKEDIN_PROFILE,
+} from '../constants/socialNetworks'
 
 function ContactCard() {
   return (
@@ -36,14 +40,14 @@ function ContactCard() {
                 alt="whatsapp icon"
               />
             </a>
-            <a href="https://www.linkedin.com/in/marcelo-arraes" className="">
+            <a href={LINKEDIN_PROFILE} className="">
               <img
                 src="/linkedin-svgrepo-com.svg"
                 className="w-7 grayscale duration-200 ease-in-out hover:scale-125 hover:grayscale-0"
                 alt="linkedin icon"
               />
             </a>
-            <a href="https://www.instagram.com/marcelo.arraess/" className="">
+            <a href={INSTAGRAM_PROFILE} className="">
               <img
                 src="/instagram-svgrepo-com.svg"
                 className="w-7 grayscale duration-200 ease-in-out hover:scale-125 hover:grayscale-0"

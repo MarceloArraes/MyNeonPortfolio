@@ -1,14 +1,26 @@
+import Typewriter from 'typewriter-effect'
+import { LINKEDIN_PROFILE } from '../constants/socialNetworks'
+
+const TypeWritterThing = () => {
+  return (
+    <Typewriter
+      options={{
+        strings: ['NeonCoder', 'Marcelo`s'],
+        autoStart: true,
+        loop: true,
+      }}
+    />
+  )
+}
+
 function Title() {
   return (
     <main id="home" className="py-30 dark:text-white">
       <div className="flex w-full flex-col items-center justify-center text-center">
         <h1 className="text-6xl font-bold">
           Welcome to{' '}
-          <a
-            className="text-blue-600"
-            href="https://www.linkedin.com/in/MarArraes"
-          >
-            Marcelo's Portfolio
+          <a className="text-blue-600" href={LINKEDIN_PROFILE}>
+            <TypeWritterThing /> Portolio
           </a>
         </h1>
         <p className="mt-3 text-2xl">

@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useState } from 'react'
+/* import { SetStateAction, useEffect, useState } from 'react'
 
 // Its seems that the only way to get all the commits of all repos
 // is to iterate throught each repo and retrieve the commits made on them
@@ -43,6 +43,7 @@ const fetchFromGit = async (setCommitedToday: {
         setCommitedToday(true)
       }
     })
+    .catch((err) => console.log('Error fetching56'))
 }
 
 export function GitHubCommits() {
@@ -64,3 +65,4 @@ export function GitHubCommits() {
     </a>
   )
 }
+ */
