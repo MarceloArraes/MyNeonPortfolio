@@ -1,12 +1,19 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider as NextThemeProvider } from 'next-themes'
+import { GlobalStyle, ThemeProvider } from '@react95/core'
+import { ThemeToggle } from '../components/ThemeToggle'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute="class">
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <NextThemeProvider attribute="class">
+      <ThemeProvider>
+        <GlobalStyle />
+
+        <ThemeToggle />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </NextThemeProvider>
   )
 }
 

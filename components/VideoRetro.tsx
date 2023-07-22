@@ -12,8 +12,7 @@ export const VideoPlayer = () => {
   }, [])
 
   return (
-    <ThemeProvider>
-      <GlobalStyle />
+    <>
       {videoReady ? (
         <Video
           w="450"
@@ -26,6 +25,6 @@ export const VideoPlayer = () => {
       ) : (
         <div>Loading video...</div>
       )}
-    </ThemeProvider>
+    </>
   )
 }

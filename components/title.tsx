@@ -24,7 +24,7 @@ function Title() {
           </a>
         </h1>
         <p className="mt-3 text-2xl">
-          Feel free to contact me at{' '}
+          Contact me at{' '}
           <code className="rounded-md bg-gray-400  p-3 font-mono text-lg dark:bg-gray-700">
             marcelo.arraes@gmail.com
           </code>

@@ -1,21 +1,17 @@
 export const VideoForBgBlend = () => {
   return (
-    <div className="video-wrap">
+    <div className="container" id="video-bg">
       <video
-        autoPlay={true}
+        id="effet"
+        width="320"
+        height="240"
+        loop
+        autoPlay
         playsInline={false}
-        loop={false}
-        muted={false}
-        id="video-bg"
+        muted={true}
       >
-        <source
-          src="https://tactus.wpengine.com/wp-content/uploads/tactus-waves-hero.mp4"
-          type="video/mp4"
-        />
-        <source
-          src="https://tactus.wpengine.com/wp-content/uploads/tactus-waves-hero.mp4"
-          type="video/mp4"
-        />
+        <source src="/tactus-waves-hero.mp4" type="video/mp4" />
+        <source src="/tactus-waves-hero.mp4" type="video/mp4" />
       </video>
     </div>
   )

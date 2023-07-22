@@ -15,7 +15,7 @@ const ThemeToggle = () => {
   return (
     <label
       htmlFor="toogleA"
-      className="absolute left-5 top-20 cursor-pointer items-center"
+      className="absolute left-5 top-20 z-50 cursor-pointer items-center"
     >
       <div className="relative">
         <input

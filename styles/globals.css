@@ -28,11 +28,40 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-::selection {
-  color: $black;
-  mix-blend-mode: difference;
+
+.container {
+  background-image: url('https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg');
+  background-repeat: no-repeat;
 }
 
-.isolate {
-  width: 100vw; /* Set the width to 100% of the viewport width */
+#effet {
+  mix-blend-mode: difference;
+}
+.full-width-image {
+  height: 250px;
+  width: 250px;
+  top: 0;
+  left: 0;
+}
+
+.image-text {
+  margin: auto;
+  padding-top: 5px;
+}
+
+.full-screen {
+  flex-direction: column;
+  margin: 1rem 1rem 0 0.5rem;
+  top: 0;
+  width: stretch;
+}
+
+.centered {
+  text-align: center;
+  margin: auto;
+}
+
+.background {
+  background-image: url('/bgnd.png');
+  background-size: cover;
 }
