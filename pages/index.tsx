@@ -10,6 +10,10 @@ import { ThemeToggle } from '../components/ThemeToggle'
 import { BackgroundWave } from '../components/BackgroundWave'
 import { VideoPlayer } from '../components/VideoRetro'
 import { Tunes } from '../components/TunesPlayer'
+import BackgroundAnimation from '../components/audioAnimationBack'
+import { Canvas } from '@react-three/fiber'
+import YourPage from '../components/myPage'
+// import BackgroundAnimation from '../components/audioAnimationBack'
 
 const Home: NextPage = () => {
   return (
@@ -20,7 +24,6 @@ const Home: NextPage = () => {
         <VideoPlayer />
         <Tunes />
         <CarouselLight />
-
         <MyCarousel projectType={'mobile'} />
 
         <GitHubSession />
@@ -28,6 +31,8 @@ const Home: NextPage = () => {
         <Contact />
 
         <Footer />
+
+        <YourPage />
       </div>
     </div>
   )

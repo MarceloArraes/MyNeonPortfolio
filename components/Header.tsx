@@ -23,14 +23,6 @@ function Header() {
     var elemTop = rect.top
     var elemBottom = rect.bottom
 
-    /*    console.log('scrollY', window.scrollY)
-    console.log('elemTop', elemTop)
-    console.log('elemBottom', elemBottom) */
-
-    // Only completely visible elements return true:
-    //var isVisible = elemTop >= 0 && elemBottom <= window.innerHeight
-
-    // Partially visible elements return true:
     var isVisible = elemTop < window.innerHeight && elemBottom >= 0
     return isVisible
   }
@@ -94,12 +86,13 @@ function Header() {
       </Head>
       <canvas
         id="nokey"
-        className="z-index-10 absolute top-0 w-screen dark:bg-transparent"
+        className="absolute top-0 z-10 w-screen dark:bg-transparent"
       >
         Your Browser Don't Support Canvas, Please Download Brave ^_^``
       </canvas>
       <nav className="fixed top-0 z-50">
-        <div className="container flex h-16 w-screen justify-center rounded-lg bg-gray-300 py-3 text-black bg-blend-multiply shadow-xl drop-shadow-xl">
+        <div className="flex h-16 w-screen  justify-center rounded-lg bg-gray-300 py-3 text-black bg-blend-multiply shadow-xl drop-shadow-xl">
+          <div className=" absolute left-20 top-2 h-32 w-32 -scale-x-100 transform bg-syth1 bg-contain bg-no-repeat opacity-90" />
           <div className="flex flex-row justify-items-center">
             <a
               href="#home"

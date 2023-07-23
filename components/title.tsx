@@ -15,7 +15,7 @@ const TypeWritterThing = () => {
 
 function Title() {
   return (
-    <main id="home" className="py-30 dark:text-white">
+    <main id="home" className="py-20 dark:text-white">
       <div className="flex w-full flex-col items-center justify-center text-center">
         <h1 className="text-6xl font-bold">
           Welcome to{' '}

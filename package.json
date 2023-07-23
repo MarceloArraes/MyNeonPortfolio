@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-three/fiber": "^8.13.5",
     "@react95/clippy": "^1.0.10",
     "@react95/core": "^6.1.1",
     "@supabase/supabase-js": "^1.35.2",
@@ -13,12 +14,14 @@
     "@types/tailwindcss": "^3.0.10",
     "@types/xstyled__styled-components": "^1.19.3",
     "framer-motion": "^10.12.12",
+    "gltfjsx": "^6.2.10",
     "next": "^13.4.2",
     "next-themes": "^0.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-responsive-carousel": "^3.2.23",
+    "three": "^0.154.0",
     "typewriter-effect": "^2.20.1",
     "yet-another-react-lightbox": "^3.10.0"
   },

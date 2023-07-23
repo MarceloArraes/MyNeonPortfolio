@@ -7,16 +7,6 @@ input:checked ~ .dot {
   transform: translateX(100%);
   background-color: grey;
 }
-/* #nav-home:active,
-#nav-projects:active,
-#nav-github:active,
-#nav-contact:active,
-#nav-footer:active {
-  background-color: #1c1c1e;
-  border-radius: 30px;
-  transition: 0.3s;
-  color: #ffffff;
-} */
 canvas {
   background-color: rgba(23, 23, 23, 0);
 }
@@ -27,11 +17,6 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-}
-
-.container {
-  background-image: url('https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg');
-  background-repeat: no-repeat;
 }
 
 #effet {
@@ -59,9 +44,4 @@ body {
 .centered {
   text-align: center;
   margin: auto;
-}
-
-.background {
-  background-image: url('/bgnd.png');
-  background-size: cover;
 }

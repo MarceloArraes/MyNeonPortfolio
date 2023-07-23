@@ -1,6 +1,7 @@
 import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
 import { Backgroundgraph } from './graphback'
+// import BackgroundAnimation from './audioAnimationBack'
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme()
@@ -15,7 +16,7 @@ const ThemeToggle = () => {
   return (
     <label
       htmlFor="toogleA"
-      className="absolute left-5 top-20 z-50 cursor-pointer items-center"
+      className="absolute left-5 top-20 z-10 cursor-pointer items-center"
     >
       <div className="relative">
         <input

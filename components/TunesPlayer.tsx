@@ -1,8 +1,6 @@
-'use client'
 import React, { useEffect, useState } from 'react'
-import styled, { css } from 'styled-components'
 import { Modal, Frame, List } from '@react95/core'
-import { CdMusic, ReaderDisket } from '@react95/icons'
+import { CdMusic } from '@react95/icons'
 
 function autoplay() {
   var t = setTimeout(function () {
@@ -36,6 +34,7 @@ export function Tunes() {
             marginTop: 35,
             width: '30%',
             overflowY: 'hidden',
+            zIndex: 99,
           }}
           title={'Tunes'}
           closeModal={handleCloseTunes}
