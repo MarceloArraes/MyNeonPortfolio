@@ -1,6 +1,15 @@
-import React, { useEffect, useRef } from 'react'
+import { Button } from '@react95/core'
+import React, { useEffect, useRef, useState } from 'react'
+import { Headphones } from 'react-feather'
 
-const WebampPlayer = () => {
+interface WebampPlayerProps {
+  openedWebamp: boolean
+}
+
+const WebampPlayer: React.FC<WebampPlayerProps> = ({
+  openedWebamp = false,
+}) => {
+  if (!openedWebamp) return null
   const webampContainerRef = useRef(null)
 
   useEffect(() => {
@@ -34,4 +43,16 @@ const WebampPlayer = () => {
   return <div className="" id="winamp-container" ref={webampContainerRef}></div>
 }
 
-export default WebampPlayer
+export const WebampButton = () => {
+  const [openedWebamp, setOpenedWebamp] = useState(false)
+
+  return (
+    <Button
+      className="absolute left-6 top-80 z-40 m-5 items-center"
+      onClick={() => setOpenedWebamp(true)}
+    >
+      <Headphones size={100} />
+      <WebampPlayer openedWebamp={openedWebamp} />
+    </Button>
+  )
+}
