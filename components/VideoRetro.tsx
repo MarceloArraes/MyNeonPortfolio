@@ -1,7 +1,7 @@
 import { Video, ThemeProvider, GlobalStyle } from '@react95/core'
 import { useEffect, useState } from 'react'
 
-export const VideoPlayer = () => {
+export const VideoRetro = () => {
   const [videoReady, setVideoReady] = useState(false)
 
   useEffect(() => {

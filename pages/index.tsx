@@ -8,11 +8,11 @@ import GitHubSession from '../components/githubSession'
 import Footer from '../components/footer'
 import { ThemeToggle } from '../components/ThemeToggle'
 import { BackgroundWave } from '../components/BackgroundWave'
-import { VideoPlayer } from '../components/VideoRetro'
+import { VideoRetro } from '../components/VideoRetro'
 import { Tunes } from '../components/TunesPlayer'
-import BackgroundAnimation from '../components/audioAnimationBack'
-import { Canvas } from '@react-three/fiber'
 import YourPage from '../components/myPage'
+import WebampPlayer from '../components/WebampPlayer'
+import { ListReact95 } from '../components/listReact95'
 // import BackgroundAnimation from '../components/audioAnimationBack'
 
 const Home: NextPage = () => {
@@ -21,7 +21,8 @@ const Home: NextPage = () => {
       <Header />
       <div className="space-y-40">
         <Title />
-        <VideoPlayer />
+        {/* <VideoPlayer /> */}
+        <ListReact95 />
         <Tunes />
         <CarouselLight />
         <MyCarousel projectType={'mobile'} />

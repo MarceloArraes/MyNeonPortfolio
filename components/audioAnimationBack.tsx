@@ -7,12 +7,12 @@ const BackgroundAnimation = () => {
   const analyserRef = useRef(null) // Declare a ref for the analyser
 
   useEffect(() => {
-    const audioElement = new Audio('/NightDriveSynthwaveMusic.mp3') // Replace with your music file path
-    audioElement.crossOrigin = 'anonymous' // If needed for CORS policy
+    const audioElement = new Audio('/NightDriveSynthwaveMusic.mp3')
+    audioElement.crossOrigin = 'anonymous'
 
     const analyser = audioContext.createAnalyser()
     analyser.fftSize = 256
-    analyserRef.current = analyser // Store the analyser in the ref
+    analyserRef.current = analyser
     const source = audioContext.createMediaElementSource(audioElement)
     source.connect(analyser)
     analyser.connect(audioContext.destination)
