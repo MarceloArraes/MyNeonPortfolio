@@ -4,10 +4,12 @@ import { Headphones } from 'react-feather'
 
 interface WebampPlayerProps {
   openedWebamp: boolean
+  setOpenedWebamp: (openedWebamp: boolean) => void
 }
 
 const WebampPlayer: React.FC<WebampPlayerProps> = ({
   openedWebamp = false,
+  setOpenedWebamp,
 }) => {
   if (!openedWebamp) return null
   const webampContainerRef = useRef(null)
@@ -31,16 +33,21 @@ const WebampPlayer: React.FC<WebampPlayerProps> = ({
           },
         ],
         zIndex: 99999,
+
         initialSkin: {
           url: './Vaporwave.wsz',
         },
       })
       // Render after the skin has loaded.
       webamp.renderWhenReady(webampContainerRef.current!)
+      webamp.onClose(() => {
+        setOpenedWebamp(false)
+      })
+      webamp.play()
     })
   }, [])
 
-  return <div className="" id="winamp-container" ref={webampContainerRef}></div>
+  return <div id="winamp-container" ref={webampContainerRef}></div>
 }
 
 export const WebampButton = () => {
@@ -49,10 +56,13 @@ export const WebampButton = () => {
   return (
     <Button
       className="absolute left-6 top-80 z-40 m-5 items-center"
-      onClick={() => setOpenedWebamp(true)}
+      onClick={() => setOpenedWebamp(!openedWebamp)}
     >
       <Headphones size={100} />
-      <WebampPlayer openedWebamp={openedWebamp} />
+      <WebampPlayer
+        openedWebamp={openedWebamp}
+        setOpenedWebamp={setOpenedWebamp}
+      />
     </Button>
   )
 }
