@@ -6,12 +6,9 @@ import { CarouselLight } from '../components/projectCards'
 import { MyCarousel } from '../components/CarouselReactResponsive'
 import GitHubSession from '../components/githubSession'
 import Footer from '../components/footer'
-import { ThemeToggle } from '../components/ThemeToggle'
 import { BackgroundWave } from '../components/BackgroundWave'
-import { VideoRetro } from '../components/VideoRetro'
 import { Tunes } from '../components/TunesPlayer'
 import YourPage from '../components/myPage'
-import WebampPlayer from '../components/WebampPlayer'
 import { ListReact95 } from '../components/listReact95'
 // import BackgroundAnimation from '../components/audioAnimationBack'
 
@@ -21,7 +18,6 @@ const Home: NextPage = () => {
       <Header />
       <div className="space-y-40">
         <Title />
-        {/* <VideoPlayer /> */}
         <ListReact95 />
         <Tunes />
         <CarouselLight />
