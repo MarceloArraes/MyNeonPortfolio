@@ -13,6 +13,7 @@
     "@types/tailwindcss": "^3.0.10",
     "@types/three": "^0.155.0",
     "@types/xstyled__styled-components": "^1.19.3",
+    "@xstyled/styled-components": "^3.8.0",
     "framer-motion": "^10.12.12",
     "gltfjsx": "^6.2.10",
     "next": "^13.4.2",
