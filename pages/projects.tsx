@@ -4,11 +4,8 @@ import { Header } from '../components/Header'
 import Title from '../components/title'
 import { CarouselLight } from '../components/projectCards'
 import { MyCarousel } from '../components/CarouselReactResponsive'
-import GitHubSession from '../components/githubSession'
 import Footer from '../components/footer'
 import { ThemeToggle } from '../components/ThemeToggle'
-import { BackgroundWave } from '../components/BackgroundWave'
-import { VideoPlayer } from '../components/VideoRetro'
 
 const Projects: NextPage = () => {
   return (
