@@ -3,9 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Modal, Frame, List, Button, Avatar } from '@react95/core'
 import Typewriter from 'typewriter-effect'
 
-// import { CdMusic } from '@react95/icons'
-// import { WebampPlayer } from './Webamp'
-
 const TypeWritterTitle = () => {
   return (
     <div className="flex flex-1 items-center justify-center">
