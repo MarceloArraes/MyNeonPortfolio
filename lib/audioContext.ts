@@ -1,7 +1,8 @@
-let audioContext
+let audioContext: AudioContext | null = null
 
 if (typeof window !== 'undefined' && !audioContext) {
-  audioContext = new (window.AudioContext || window.webkitAudioContext)()
+  audioContext = new (window.AudioContext ||
+    (window as any).webkitAudioContext)()
 }
 
-export default audioContext
+export { audioContext }
