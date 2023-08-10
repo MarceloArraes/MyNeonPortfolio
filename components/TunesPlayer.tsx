@@ -27,17 +27,7 @@ const TypeWritterInvite = () => {
         //   // loop: true,
         // }}
         onInit={(typewriter) => {
-          typewriter
-            .typeString('Hello World!')
-            .callFunction(() => {
-              console.log('String typed out!')
-            })
-            .pauseFor(2500)
-            .deleteAll()
-            .callFunction(() => {
-              console.log('All strings were deleted')
-            })
-            .start()
+          typewriter.typeString('Ready??').changeDelay(100).start()
         }}
       />
     </div>
@@ -67,7 +57,6 @@ export function Tunes() {
           }}
           title={'Tunes'}
           closeModal={handleCloseTunes}
-          // icon={<CdMusic variant="16x16_4" />}
           menu={[
             {
               name: 'Options',
@@ -89,10 +78,22 @@ export function Tunes() {
           </div>
           <TypeWritterInvite />
           <div className="flex flex-1 flex-row">
-            <Button autoFocus style={{ width: '50%' }}>
+            <Button
+              style={{ width: '50%' }}
+              onClick={() => {
+                alert('Yes baby'), toggleTunes(false)
+              }}
+            >
               Yes
             </Button>
-            <Button style={{ width: '50%' }}>No</Button>
+            <Button
+              style={{ width: '50%' }}
+              onClick={() => {
+                alert('No man'), toggleTunes(false)
+              }}
+            >
+              No
+            </Button>
           </div>
           {/* <Butto
           {/* //   <Frame
@@ -103,18 +104,20 @@ export function Tunes() {
         //       overflowY: 'hidden',
         //     }}
         //   > */}
-          {/* <iframe
+          {/* </Frame> */}
+        </Modal>
+      ) : null}
+    </>
+  )
+}
+
+{
+  /* <iframe
               src="https://open.spotify.com/embed/playlist/42lX7a4yx3rJJcDSimyS9S?utm_source=generator&theme=0"
               width="100%"
               height="165px"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
               title="The Ultimate Lo-Fi House Playlist on Spotify"
-            /> */}
-          {/* <WebampPlayer /> */}
-          {/* </Frame> */}
-        </Modal>
-      ) : null}
-    </>
-  )
+            /> */
 }
