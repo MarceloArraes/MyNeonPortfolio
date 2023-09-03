@@ -1,6 +1,7 @@
 import { Button } from '@react95/core'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Headphones } from 'react-feather'
+import { AudioContext } from '../providers/AudioContextProvider'
 
 interface WebampPlayerProps {
   openedWebamp: boolean
@@ -12,10 +13,15 @@ const WebampPlayer: React.FC<WebampPlayerProps> = ({
   setOpenedWebamp,
 }) => {
   if (!openedWebamp) return null
+  const { audioElement, audioContext, setAudioContext, analyser, setAnalyser } =
+    useContext(AudioContext)
+
   const webampContainerRef = useRef(null)
 
   useEffect(() => {
-    // Load Webamp dynamically on the client-side.
+    // Load Webamp dynamically on the client-side..
+    console.log('audioElement', audioElement?.src)
+
     import('webamp').then(({ default: Webamp }) => {
       if (!Webamp.browserIsSupported()) {
         alert('Oh no! Webamp does not work!')
@@ -29,7 +35,7 @@ const WebampPlayer: React.FC<WebampPlayerProps> = ({
               artist: 'Euphoric Eugene',
               title: '~ N I G H T D R I V E ~ ',
             },
-            url: 'NightDriveSynthwaveMusic.mp3',
+            url: audioElement?.src ?? '/NightDriveSynthwaveMusic.mp3',
           },
         ],
         zIndex: 99999,
@@ -43,9 +49,26 @@ const WebampPlayer: React.FC<WebampPlayerProps> = ({
       webamp.onClose(() => {
         setOpenedWebamp(false)
       })
-      webamp.play()
+      // webamp.play()
     })
-  }, [])
+  })
+
+  useEffect(() => {
+    // create the analizer in here?
+    if (!audioContext) {
+      const audioCtx = new (window.AudioContext ||
+        (window as any).webkitAudioContext)()
+      setAudioContext(audioCtx)
+      const analyserNode = audioCtx.createAnalyser()
+      analyserNode.fftSize = 256
+      setAnalyser(analyserNode)
+      if (audioElement) {
+        const source = audioCtx.createMediaElementSource(audioElement)
+        source.connect(analyserNode)
+        analyserNode.connect(audioCtx.destination)
+      }
+    }
+  }, [openedWebamp])
 
   return <div id="winamp-container" ref={webampContainerRef}></div>
 }

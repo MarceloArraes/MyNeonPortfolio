@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <Header />
       <div className="space-y-40">
         <Title />
-        <ListReact95 />
+        {/* <ListReact95 /> */}
         <Tunes />
         <CarouselLight />
         <MyCarousel projectType={'mobile'} />

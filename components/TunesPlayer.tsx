@@ -1,7 +1,9 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Modal, Frame, List, Button, Avatar } from '@react95/core'
 import Typewriter from 'typewriter-effect'
+import { AudioContext } from '../providers/AudioContextProvider'
+import { getAudioContext } from '../lib/getAudioContext'
 
 const TypeWritterTitle = () => {
   return (
@@ -36,66 +38,77 @@ const TypeWritterInvite = () => {
 
 export function Tunes() {
   const [showTunes, toggleTunes] = useState(true)
-  const [loading, setLoading] = useState(true)
+  const {
+    audioElement,
+    audioContext,
+    setAudioContext,
+    analyser,
+    isLoading,
+    handlePlay,
+  } = useContext(AudioContext)
   const handleCloseTunes = () => {
     toggleTunes(false)
   }
-  useEffect(() => {
-    setLoading(true)
-  }, [])
-  if (!loading) return null
+
+  if (isLoading) return null
   return (
     <>
       {showTunes ? (
-        <Modal
-          style={{
-            right: 20,
-            marginTop: 35,
-            width: '30%',
-            overflowY: 'hidden',
-            zIndex: 99,
-          }}
-          title={'Tunes'}
-          closeModal={handleCloseTunes}
-          menu={[
-            {
-              name: 'Options',
-              list: (
-                <List>
-                  <List.Item onClick={handleCloseTunes}>Close</List.Item>
-                </List>
-              ),
-            },
-          ]}
+        <div
+          className="relative z-10"
+          aria-labelledby="modal-title"
+          role="dialog"
+          aria-modal="true"
         >
-          <TypeWritterTitle />
-          <div className="my-4 flex flex-1 items-center justify-center">
-            <Avatar
-              alt="photo"
-              src="./myPics/marceloSythLord1-removebg-preview.png"
-              size={150}
-            />
-          </div>
-          <TypeWritterInvite />
-          <div className="flex flex-1 flex-row">
-            <Button
-              style={{ width: '50%' }}
-              onClick={() => {
-                alert('Yes baby'), toggleTunes(false)
-              }}
-            >
-              Yes
-            </Button>
-            <Button
-              style={{ width: '50%' }}
-              onClick={() => {
-                alert('No man'), toggleTunes(false)
-              }}
-            >
-              No
-            </Button>
-          </div>
-          {/* <Butto
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+          <Modal
+            style={{
+              right: 20,
+              marginTop: 35,
+              width: '30%',
+              overflowY: 'hidden',
+              zIndex: 99,
+            }}
+            title={'Tunes'}
+            closeModal={handleCloseTunes}
+            menu={[
+              {
+                name: 'Options',
+                list: (
+                  <List>
+                    <List.Item onClick={handleCloseTunes}>Close</List.Item>
+                  </List>
+                ),
+              },
+            ]}
+          >
+            <TypeWritterTitle />
+            <div className="my-4 flex flex-1 items-center justify-center">
+              <Avatar
+                alt="photo"
+                src="./myPics/marceloSythLord1-removebg-preview.png"
+                size={150}
+              />
+            </div>
+            <TypeWritterInvite />
+            <div className="flex flex-1 flex-row">
+              <Button
+                style={{ width: '50%' }}
+                onClick={() => {
+                  handleCloseTunes()
+                  handlePlay()
+                }}
+              >
+                Yes
+              </Button>
+              <Button
+                style={{ width: '50%' }}
+                onClick={() => alert('Thats imorality, ')}
+              >
+                No
+              </Button>
+            </div>
+            {/* <Butto
           {/* //   <Frame
         //     className="rounded"
         //     style={{
@@ -104,8 +117,9 @@ export function Tunes() {
         //       overflowY: 'hidden',
         //     }}
         //   > */}
-          {/* </Frame> */}
-        </Modal>
+            {/* </Frame> */}
+          </Modal>
+        </div>
       ) : null}
     </>
   )
