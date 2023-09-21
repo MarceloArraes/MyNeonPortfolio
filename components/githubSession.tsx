@@ -33,7 +33,6 @@ const fetchFromGit = async (setCommitedToday: {
   fetch('https://api.github.com/users/marceloarraes/events/public')
     .then((res) => res.json())
     .then((data) => {
-      console.log('Data123 ', data)
       const lastPush = new Date(data[0].created_at)
       if (lastPush.getDate() === new Date().getDate()) {
         setCommitedToday(true)

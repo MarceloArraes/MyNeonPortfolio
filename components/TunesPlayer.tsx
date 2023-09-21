@@ -63,9 +63,9 @@ export function Tunes() {
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
           <Modal
             style={{
-              right: 20,
-              marginTop: 35,
-              width: '30%',
+              top: '30%',
+              left: '45%',
+              minWidth: 200,
               overflowY: 'hidden',
               zIndex: 99,
             }}
@@ -108,30 +108,9 @@ export function Tunes() {
                 No
               </Button>
             </div>
-            {/* <Butto
-          {/* //   <Frame
-        //     className="rounded"
-        //     style={{
-        //       height: '150px',
-        //       borderRadius: '1rem',
-        //       overflowY: 'hidden',
-        //     }}
-        //   > */}
-            {/* </Frame> */}
           </Modal>
         </div>
       ) : null}
     </>
   )
-}
-
-{
-  /* <iframe
-              src="https://open.spotify.com/embed/playlist/42lX7a4yx3rJJcDSimyS9S?utm_source=generator&theme=0"
-              width="100%"
-              height="165px"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              title="The Ultimate Lo-Fi House Playlist on Spotify"
-            /> */
 }

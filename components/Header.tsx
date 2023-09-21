@@ -10,7 +10,6 @@ function Header() {
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
     console.log(e)
-    //e.currentTarget.classList.add('active:bg-blue-800')
 
     const { target } = e
     if (target) {

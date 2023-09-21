@@ -109,28 +109,7 @@ function Contact(): JSX.Element {
               name="redirect"
               value="https://web3forms.com/success"
             />
-            {/*           <button
-            type="submit"
-            className="
-            w-full
-            rounded
-            bg-blue-600
-            py-2.5
-            text-xs
-            font-medium
-            uppercase
-            leading-tight
-            text-white
-            shadow-md
-            transition duration-150
-            ease-in-out hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700
-            focus:shadow-lg focus:outline-none
-            focus:ring-0
-            active:bg-blue-800
-            active:shadow-lg"
-          >
-            Submit Contact
-          </button> */}
+
             <button
               type="submit"
               className="
